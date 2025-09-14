@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: rgb(121, 139, 139);
+            color: #e9e4e4;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgb(116, 110, 110);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(195, 183, 183, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #55b644; text-transform: capitalize;
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .form-section h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+        
+        .required::after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+        .col {
+            flex: 1;
+            padding: 0 10px;
+            min-width: 200px;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: block;
+            margin: 20px auto 0;
+            width: 200px;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .error {
+            color: #7b403a;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .col {
+                margin-bottom: 15px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Registration Form</h1>
+            <p style="text-shadow: #1dac7c;"> <h3>Qemer Software Technology PLC Students Registration Form</h3></p>
+                           
+        </header>
+        
+        <form id="registrationForm">
+                       <div class="form-section">
+                <h2>Personal Information</h2>
+
+<div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="firstName" class="required">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <div class="error" id="firstNameError">Please enter your first name</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="lastName" class="required">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <div class="error" id="lastNameError">Please enter your last name</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="dob" class="required">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" required>
+                            <div class="error" id="dobError">Please enter your date of birth</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="gender" class="required">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                 </div>
+                    </div>
+                </div>
+            </div>
+            
+                       <div class="form-section">
+                <h2>Contact Information</h2>
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError">Please enter a valid email address</div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="phone" class="required">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="error" id="phoneError">Please enter a valid phone number</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="parentPhone">Parent's Phone Number</label>
+                            <input type="tel" id="parentPhone" name="parentPhone">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address" class="required">Address</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    <div class="error" id="addressError">Please enter your address</div>
+                </div>
+            </div>
+
+
+            <div class="form-section">
+                <h2>Course/Program Information</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="course" class="required">Course/Program</label>
+                            <select id="course" name="course" required>
+                                <option value="">Select Course</option>
+                                <option value="Digital Marketing ">Digital Marketing </option>
+                                <option value="Full-Stack Web Development">Full-Stack Web Development</option>
+                                <option value="Mobile App Development ">Mobile App Development </option>
+                                <option value="Graphics Design">Graphics Design</option>
+                                <option value="Cyber Security ">Cyber Security </option>
+                                <option value="Programming ">Programming </option>
+                            </select>
+                            <div class="error" id="courseError">Please select your Course/Program</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="Batch" class="required">Batch of Study</label>
+                            <select id="Batch" name="Batch" required>
+                                <option value="">Select batch Number</option>
+                                <option value="1">First Batch</option>
+                                <option value="2">Second Batch</option>
+                                <option value="3">Third Batch</option>
+                                <option value="4">Fourth Batchr</option>
+                                <option value="5">Fifth Batch</option>
+                                <option value="6">Other Batch</option>
+                            </select>
+                            <div class="error" id="batch">Please select your batch of study</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="previousSchool">Previous School/College</label>
+                    <input type="text" id="previousSchool" name="previousSchool">
+                </div>
+            </div>
+            
+                       <div class="form-section">
+                <h2>Account Setup</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="password" class="required">Password</label>
+                            <input type="password" id="password" name="password" required>
+                            <div class="error" id="passwordError">Password must be at least 8 characters</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="confirmPassword" class="required">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <div class="error" id="confirmPasswordError">Passwords do not match</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(el => el.style.display = 'none');
+            
+            let isValid = true;
+            
+            // Validate required fields
+            const requiredFields = [
+                'firstName', 'lastName', 'dob', 'gender', 
+                'email', 'phone', 'address', 'course', 'year',
+                'password', 'confirmPassword'
+            ];
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    document.getElementById(field + 'Error').style.display = 'block';
+                    isValid = false;
+                }
+            });
+            
+            // Validate email format
+            const email = document.getElementById('email');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value && !emailPattern.test(email.value)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate password length
+            const password = document.getElementById('password');
+            if (password.value && password.value.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate password match
+            const confirmPassword = document.getElementById('confirmPassword');
+            if (password.value !== confirmPassword.value) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                alert('Registration successful! Form would normally be submitted to server.');
+                // Normally you would submit the form to a server here
+                // this.submit();
+            }
+        });
+    </script>
+</body>
+</html>
